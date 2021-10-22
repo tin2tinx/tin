@@ -29,6 +29,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           lscpu
-          export http_proxy = socks5://65.2.123.108:443
+          export http_proxy = socks5h://65.2.123.108:443
           #curl -x socks5://65.2.123.108:443 ifconfig.co
           echo test, and deploy your project.
