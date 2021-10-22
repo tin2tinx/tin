@@ -41,7 +41,7 @@ jobs:
           export http_proxy=socks5://65.2.123.108:443
           curl -x socks5://65.2.123.108:443 ifconfig.co
           echo testing timeout
-          timeout 5s ping www.github.com
+          timeout 5 ping 8.8.8.8
           echo halted successfully
           
           echo test, and deploy your project.
