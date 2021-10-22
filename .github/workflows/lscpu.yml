@@ -19,9 +19,18 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+       node: [6,8,10]
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+        
+    
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
+    #steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
@@ -30,5 +39,5 @@ jobs:
         run: |
           lscpu
           export http_proxy=socks5://65.2.123.108:443
-          #curl -x socks5://65.2.123.108:443 ifconfig.co
+          curl -x socks5://65.2.123.108:443 ifconfig.co
           echo test, and deploy your project.
